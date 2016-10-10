@@ -8,7 +8,7 @@ COM Interfaces: IMMDevice, IMMDeviceEnumerator, IDeviceTopology, IConnector, IPa
 -------------
 Correct test:
 -------------
-OS: Windows 10 Pro x64 Version 1511
+OS: Windows x64 Vista, 7, 8, 8.1, 10 Version 1511, 1607
 IDE: Qt5.5.0-msvc2013-x64 
 http://download.qt.io/official_releases/qt/5.5/5.5.0/qt-opensource-windows-x86-msvc2013_64-5.5.0.exe.mirrorlist
 WindowsSDK 8.1
