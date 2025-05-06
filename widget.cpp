@@ -7,6 +7,7 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget),
     _pDeviceEnumerator(nullptr),
     _pDefaultDevice(nullptr),
+    _pDeviceTopology(nullptr),
     _pConnectorFrom(nullptr),
     _pConnectorTo(nullptr),
     _pPart(nullptr),
@@ -15,7 +16,6 @@ Widget::Widget(QWidget *parent) :
     _pAudioVolumeLevelSubwoofer(nullptr),
     _pAudioVolumeLevelCenter(nullptr),
     _pAudioVolumeLevelSide(nullptr),
-    _pDeviceTopology(nullptr),
     _isAppLoading(true)
 {
     ui->setupUi(this);
