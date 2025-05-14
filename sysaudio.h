@@ -18,9 +18,9 @@ class SysAudio
 private:
     SysAudio();
 
-    IMMDeviceEnumerator *deviceEnumerator;
-    IConnector *connectorFrom;
-    IConnector *connectorTo;
+    CComPtr<IMMDeviceEnumerator> deviceEnumerator;
+    CComPtr<IConnector> connectorFrom;
+    CComPtr<IConnector> connectorTo;
 
 public:
     static SysAudio &getInstance()
