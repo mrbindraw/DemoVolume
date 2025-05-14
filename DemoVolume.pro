@@ -17,8 +17,10 @@ LIBS += Ole32.lib Winmm.lib
 
 
 SOURCES += main.cpp\
+        sysaudio.cpp \
         widget.cpp
 
-HEADERS  += widget.h
+HEADERS  += widget.h \
+    sysaudio.h
 
 FORMS    += widget.ui
