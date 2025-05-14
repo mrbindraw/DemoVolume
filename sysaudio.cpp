@@ -17,7 +17,7 @@ void SysAudio::init()
 {
     CoInitialize(nullptr);
 
-    HRESULT hr = CoCreateInstance(__uuidof(MMDeviceEnumerator), NULL, CLSCTX_INPROC_SERVER, __uuidof(IMMDeviceEnumerator), (LPVOID *)&deviceEnumerator);
+    HRESULT hr = CoCreateInstance(__uuidof(MMDeviceEnumerator), nullptr, CLSCTX_INPROC_SERVER, __uuidof(IMMDeviceEnumerator), (LPVOID *)&deviceEnumerator);
     if (hr != S_OK)
     {
         qDebug() << "hr != S_OK: CoCreateInstance(__uuidof(MMDeviceEnumerator): " << Q_FUNC_INFO;
@@ -73,7 +73,7 @@ CComPtr<IDeviceTopology> SysAudio::getDeviceTopology(const CComPtr<IMMDevice> &d
     }
 
     CComPtr<IDeviceTopology> deviceTopology;
-    HRESULT hr = device->Activate(__uuidof(IDeviceTopology), CLSCTX_INPROC_SERVER, NULL, (PVOID *)&deviceTopology);
+    HRESULT hr = device->Activate(__uuidof(IDeviceTopology), CLSCTX_INPROC_SERVER, nullptr, (PVOID *)&deviceTopology);
     if (hr != S_OK)
     {
         qDebug() << "hr != S_OK: device->Activate(__uuidof(IDeviceTopology): " << Q_FUNC_INFO;
