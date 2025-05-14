@@ -5,11 +5,7 @@
 #include <QDebug>
 #include <QtTest/QTest>
 
-#include <Windows.h>
-#include <mmdeviceapi.h>
-#include <devicetopology.h>
-#include <Ksmedia.h>
-
+#include "sysaudio.h"
 
 namespace Ui {
 class Widget;
@@ -36,24 +32,6 @@ private slots:
 
 private:
     Ui::Widget *ui;
-
-    HRESULT _hr;
-
-    IMMDeviceEnumerator *_pDeviceEnumerator;
-    IMMDevice *_pDefaultDevice;
-
-    IDeviceTopology *_pDeviceTopology;
-    IConnector *_pConnectorFrom;
-    IConnector *_pConnectorTo;
-    IPart *_pPart;
-    IAudioVolumeLevel *_pAudioVolumeLevelFront;
-    IAudioVolumeLevel *_pAudioVolumeLevelRear;
-    IAudioVolumeLevel *_pAudioVolumeLevelSubwoofer;
-    IAudioVolumeLevel *_pAudioVolumeLevelCenter;
-    IAudioVolumeLevel *_pAudioVolumeLevelSide;
-
-    float dbToPercent(float value);
-    float percentToDb(float value);
 
     bool _isAppLoading;
 
