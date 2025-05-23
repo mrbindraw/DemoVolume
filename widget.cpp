@@ -30,23 +30,23 @@ Widget::Widget(QWidget *parent) :
 
 void Widget::showEvent(QShowEvent *)
 {
-    int volumeFront = SysAudio::getInstance().getPartVolume("Front");
+    int volumeFront = SysAudio::getInstance().getPartVolume(ui->lbChannelFront->text());
     ui->hsldChannelFront->setValue(volumeFront);
     ui->lbVolumeFront->setText(QString::number(volumeFront));
 
-    int volumeRear = SysAudio::getInstance().getPartVolume("Rear");
+    int volumeRear = SysAudio::getInstance().getPartVolume(ui->lbChannelRear->text());
     ui->hsldChannelRear->setValue(volumeRear);
     ui->lbVolumeRear->setText(QString::number(volumeRear));
 
-    int volumeSub = SysAudio::getInstance().getPartVolume("Subwoofer");
+    int volumeSub = SysAudio::getInstance().getPartVolume(ui->lbChannelSub->text());
     ui->hsldChannelSub->setValue(volumeSub);
     ui->lbVolumeSub->setText(QString::number(volumeSub));
 
-    int volumeCenter = SysAudio::getInstance().getPartVolume("Center");
+    int volumeCenter = SysAudio::getInstance().getPartVolume(ui->lbChannelCenter->text());
     ui->hsldChannelCenter->setValue(volumeCenter);
     ui->lbVolumeCenter->setText(QString::number(volumeCenter));
 
-    int volumeSide = SysAudio::getInstance().getPartVolume("Side");
+    int volumeSide = SysAudio::getInstance().getPartVolume(ui->lbChannelSide->text());
     ui->hsldChannelSide->setValue(volumeSide);
     ui->lbVolumeSide->setText(QString::number(volumeSide));
 
