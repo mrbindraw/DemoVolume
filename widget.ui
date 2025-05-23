@@ -10,6 +10,18 @@
     <height>228</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>317</width>
+    <height>228</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>317</width>
+    <height>228</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>DemoVolume</string>
   </property>
@@ -29,7 +41,7 @@
     <number>100</number>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_VolFront">
@@ -87,7 +99,7 @@
     <number>100</number>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_VolRear">
@@ -145,7 +157,7 @@
     <number>100</number>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_Center">
@@ -190,7 +202,7 @@
     <number>100</number>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
   <widget class="QLabel" name="lbl_Side">
@@ -235,7 +247,7 @@
     <number>100</number>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
  </widget>
