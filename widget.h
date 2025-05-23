@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QDebug>
-#include <QtTest/QTest>
+
 
 #include "sysaudio.h"
 
