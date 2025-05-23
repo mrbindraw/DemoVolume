@@ -62,8 +62,13 @@ void Widget::handleVolumeValueChanged(int volume, const QString &channelName)
         return;
     }
 
-    qDebug() << Q_FUNC_INFO;
-    SysAudio::getInstance().setPartVolume(channelName, volume);
+    if(!SysAudio::getInstance().setPartVolume(channelName, volume))
+    {
+        qDebug() << "ERROR!: Can't change volume for the" << channelName << "channel to" << volume << Q_FUNC_INFO;
+        return;
+    }
+
+    qDebug() << "-> Volume changed for channel:" << channelName << volume;
 }
 
 Widget::~Widget()
