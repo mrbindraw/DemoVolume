@@ -21,6 +21,20 @@ target_link_libraries(DemoVolume
         Qt::Widgets
 )
 
+if(WIN32)
+    #[[
+    if(CMAKE_BUILD_TYPE MATCHES "Debug")
+        set_target_properties(DemoVolume PROPERTIES
+            LINK_FLAGS "/SUBSYSTEM:CONSOLE"
+        )
+    endif()
+    ]]
+
+    target_link_options(DemoVolume PRIVATE
+        "$<$<CONFIG:Debug>:/SUBSYSTEM:CONSOLE>"
+    )
+endif()
+
 include(GNUInstallDirs)
 
 install(TARGETS DemoVolume
