@@ -276,7 +276,7 @@ int SysAudio::getPartVolume(const QString &partName)
     return getPartVolume(audioVolumeLevel);
 }
 
-int SysAudio::getPartVolume(CComPtr<IAudioVolumeLevel> &audioVolumeLevel)
+int SysAudio::getPartVolume(const CComPtr<IAudioVolumeLevel> &audioVolumeLevel)
 {
     if(!audioVolumeLevel)
     {

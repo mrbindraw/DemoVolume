@@ -47,7 +47,7 @@ public:
     CComPtr<IAudioVolumeLevel> getAudioVolumeLevel(const CComPtr<IPart> &part) const;
     CComPtr<IAudioVolumeLevel> getAudioVolumeLevel(const QString &partName) const;
     int getPartVolume(const QString &partName);
-    int getPartVolume(CComPtr<IAudioVolumeLevel> &audioVolumeLevel);
+    int getPartVolume(const CComPtr<IAudioVolumeLevel> &audioVolumeLevel);
 
     bool setPartVolume(const QString &partName, int volume);
     bool setPartVolume(const CComPtr<IAudioVolumeLevel> &audioVolumeLevel, int volume);
