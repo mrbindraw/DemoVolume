@@ -183,6 +183,30 @@ CComPtr<IPart> SysAudio::getPart(CComPtr<IPart> &part, const QString &partName) 
     return getPart(partNext, partName);
 }
 
+bool SysAudio::isPartExist(const QString &partName, CComPtr<IPart> &outPart) const
+{
+    CComPtr<IPart> partRoot = getPartRoot();
+    if(!partRoot)
+    {
+        return false;
+    }
+
+    CComPtr<IPart> part = getPart(partRoot, partName);
+    if(!part)
+    {
+        return false;
+    }
+
+    outPart = part;
+    return true;
+}
+
+bool SysAudio::isPartExist(const QString &partName) const
+{
+    CComPtr<IPart> outPart;
+    return isPartExist(partName, outPart);
+}
+
 QString SysAudio::getPartName(const CComPtr<IPart> &part) const
 {
     if(!part)
@@ -198,6 +222,23 @@ QString SysAudio::getPartName(const CComPtr<IPart> &part) const
     wstrPartName = nullptr;
 
     return partName;
+}
+
+CComPtr<IAudioVolumeLevel> SysAudio::getAudioVolumeLevel(const QString &partName) const
+{
+    if(partName.isEmpty())
+    {
+        return nullptr;
+    }
+
+    CComPtr<IPart> outPart;
+    if(!isPartExist(partName, outPart))
+    {
+        qDebug() << "ERROR!: Can't find the part for" << partName << Q_FUNC_INFO;
+        return nullptr;
+    }
+
+    return getAudioVolumeLevel(outPart);
 }
 
 CComPtr<IAudioVolumeLevel> SysAudio::getAudioVolumeLevel(const CComPtr<IPart> &part) const
@@ -226,19 +267,7 @@ int SysAudio::getPartVolume(const QString &partName)
         return 0;
     }
 
-    CComPtr<IPart> partRoot = getPartRoot();
-    if(!partRoot)
-    {
-        return 0;
-    }
-
-    CComPtr<IPart> part = getPart(partRoot, partName);
-    if(!part)
-    {
-        return 0;
-    }
-
-    CComPtr<IAudioVolumeLevel> audioVolumeLevel = getAudioVolumeLevel(part);
+    CComPtr<IAudioVolumeLevel> audioVolumeLevel = getAudioVolumeLevel(partName);
     if(!audioVolumeLevel)
     {
         return 0;
@@ -247,7 +276,7 @@ int SysAudio::getPartVolume(const QString &partName)
     return getPartVolume(audioVolumeLevel);
 }
 
-int SysAudio::getPartVolume(CComPtr<IAudioVolumeLevel> &audioVolumeLevel)
+int SysAudio::getPartVolume(const CComPtr<IAudioVolumeLevel> &audioVolumeLevel)
 {
     if(!audioVolumeLevel)
     {
@@ -287,19 +316,7 @@ bool SysAudio::setPartVolume(const QString &partName, int volume)
         return false;
     }
 
-    CComPtr<IPart> partRoot = getPartRoot();
-    if(!partRoot)
-    {
-        return false;
-    }
-
-    CComPtr<IPart> part = getPart(partRoot, partName);
-    if(!part)
-    {
-        return false;
-    }
-
-    CComPtr<IAudioVolumeLevel> audioVolumeLevel = getAudioVolumeLevel(part);
+    CComPtr<IAudioVolumeLevel> audioVolumeLevel = getAudioVolumeLevel(partName);
     if(!audioVolumeLevel)
     {
         return false;

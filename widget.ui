@@ -10,10 +10,22 @@
     <height>228</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>317</width>
+    <height>228</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>317</width>
+    <height>228</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>DemoVolume</string>
   </property>
-  <widget class="QSlider" name="hSlider_Front">
+  <widget class="QSlider" name="hsldChannelFront">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -29,10 +41,10 @@
     <number>100</number>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_VolFront">
+  <widget class="QLabel" name="lbVolumeFront">
    <property name="geometry">
     <rect>
      <x>260</x>
@@ -45,7 +57,7 @@
     <string>Volume</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_Front">
+  <widget class="QLabel" name="lbChannelFront">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -58,7 +70,7 @@
     <string>Front</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_Rear">
+  <widget class="QLabel" name="lbChannelRear">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -71,7 +83,7 @@
     <string>Rear</string>
    </property>
   </widget>
-  <widget class="QSlider" name="hSlider_Rear">
+  <widget class="QSlider" name="hsldChannelRear">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -87,10 +99,10 @@
     <number>100</number>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_VolRear">
+  <widget class="QLabel" name="lbVolumeRear">
    <property name="geometry">
     <rect>
      <x>260</x>
@@ -103,7 +115,7 @@
     <string>Volume</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_VolSub">
+  <widget class="QLabel" name="lbVolumeSub">
    <property name="geometry">
     <rect>
      <x>260</x>
@@ -116,7 +128,7 @@
     <string>Volume</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_Sub">
+  <widget class="QLabel" name="lbChannelSub">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -129,7 +141,7 @@
     <string>Subwoofer</string>
    </property>
   </widget>
-  <widget class="QSlider" name="hSlider_Sub">
+  <widget class="QSlider" name="hsldChannelSub">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -145,10 +157,10 @@
     <number>100</number>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_Center">
+  <widget class="QLabel" name="lbChannelCenter">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -161,7 +173,7 @@
     <string>Center</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_VolCenter">
+  <widget class="QLabel" name="lbVolumeCenter">
    <property name="geometry">
     <rect>
      <x>260</x>
@@ -174,7 +186,7 @@
     <string>Volume</string>
    </property>
   </widget>
-  <widget class="QSlider" name="hSlider_Center">
+  <widget class="QSlider" name="hsldChannelCenter">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -190,10 +202,10 @@
     <number>100</number>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_Side">
+  <widget class="QLabel" name="lbChannelSide">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -206,7 +218,7 @@
     <string>Side</string>
    </property>
   </widget>
-  <widget class="QLabel" name="lbl_VolSide">
+  <widget class="QLabel" name="lbVolumeSide">
    <property name="geometry">
     <rect>
      <x>260</x>
@@ -219,7 +231,7 @@
     <string>Volume</string>
    </property>
   </widget>
-  <widget class="QSlider" name="hSlider_Side">
+  <widget class="QSlider" name="hsldChannelSide">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -235,7 +247,7 @@
     <number>100</number>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
  </widget>
