@@ -40,9 +40,12 @@ public:
     CComPtr<IDeviceTopology> getDeviceTopology(const CComPtr<IMMDevice> &device);
     CComPtr<IPart> getPartRoot() const;
     CComPtr<IPart> getPart(CComPtr<IPart> &part, const QString &partName) const;
+    bool isPartExist(const QString &partName, CComPtr<IPart> &outPart) const;
+    bool isPartExist(const QString &partName) const;
     QString getPartName(const CComPtr<IPart> &part) const;
 
     CComPtr<IAudioVolumeLevel> getAudioVolumeLevel(const CComPtr<IPart> &part) const;
+    CComPtr<IAudioVolumeLevel> getAudioVolumeLevel(const QString &partName) const;
     int getPartVolume(const QString &partName);
     int getPartVolume(CComPtr<IAudioVolumeLevel> &audioVolumeLevel);
 
