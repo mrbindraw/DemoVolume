@@ -30,6 +30,13 @@ Widget::Widget(QWidget *parent) :
 
 void Widget::showEvent(QShowEvent *)
 {
+    // KSNODETYPE_SUM https://learn.microsoft.com/en-us/windows-hardware/drivers/audio/ksnodetype-sum
+    if(!SysAudio::getInstance().isPartExist("Sum"))
+    {
+        QMessageBox::critical(this, "ERROR!", "The audio playback device is not configured or does not support the surround sound system!");
+        return;
+    }
+
     int volumeFront = SysAudio::getInstance().getPartVolume(ui->lbChannelFront->text());
     ui->hsldChannelFront->setValue(volumeFront);
     ui->lbVolumeFront->setText(QString::number(volumeFront));
