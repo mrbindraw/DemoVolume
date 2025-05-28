@@ -25,8 +25,6 @@ private slots:
 private:
     Ui::Widget *ui;
 
-    bool _isAppLoading;
-
 protected:
     void showEvent(QShowEvent *);
 };
