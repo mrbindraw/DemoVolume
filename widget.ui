@@ -54,7 +54,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Volume</string>
+    <string notr="true">0</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbChannelFront">
@@ -112,7 +112,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Volume</string>
+    <string notr="true">0</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbVolumeSub">
@@ -125,7 +125,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Volume</string>
+    <string notr="true">0</string>
    </property>
   </widget>
   <widget class="QLabel" name="lbChannelSub">
@@ -183,7 +183,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Volume</string>
+    <string notr="true">0</string>
    </property>
   </widget>
   <widget class="QSlider" name="hsldChannelCenter">
@@ -228,7 +228,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Volume</string>
+    <string notr="true">0</string>
    </property>
   </widget>
   <widget class="QSlider" name="hsldChannelSide">
